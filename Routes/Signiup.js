@@ -7,8 +7,8 @@ router.get('/records',async function(req,res){
     res.json(signup)
 })
 
-router.get('/Register',async function(req,res){
-    await usersignupmodel.create(req.query);
+router.get('/',async function(req,res){
+    await usersignupmodel.create(req.body);
     res.send("Signup data filled successfuly");
 })
 
