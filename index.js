@@ -8,7 +8,7 @@ app.use(express.json())
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 
-app.get('/', async function(req,res){
+app.get('/Register', function(req,res){
     res.render(__dirname+'/view/Registeration.ejs')
 })
 
