@@ -10,7 +10,7 @@
     <div class="container right-panel-active">
       <!-- Sign Up -->
       <div class="container__form container--signup">
-        <form action="/api/Signup" class="form" id="form1">
+        <form action="/api/Signup" class="form">
           <h2 class="form__title">Sign Up</h2>
           <input id="user" name="user" type="text" placeholder="User" class="input" />
           <input id="email" name="email" type="email" placeholder="Email" class="input" />
@@ -58,9 +58,9 @@
         container.classList.add("right-panel-active");
       });
 
+      
       fistForm.addEventListener("submit", (e) => e.preventDefault());
       secondForm.addEventListener("submit", (e) => e.preventDefault());
-
 
 
 
