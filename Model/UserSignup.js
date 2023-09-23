@@ -1,10 +1,9 @@
 const mongoose =require('mongoose');
 const usersignupmodel= mongoose.model("Signup", new mongoose.Schema({
 
-    name:String,
+    user:String,
     email:String,
-    password:String,
-    gender:String,
-    PhoneNumber:Number,
+    Password:String,
+    
 }))
 module.exports= usersignupmodel
