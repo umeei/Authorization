@@ -38,7 +38,7 @@ app.get('/login',(req,res)=>{
 })
 
 
-app.get('/Profile',(req,res)=>{
+app.get('/Dashboard',(req,res)=>{
     if(req.access.token){
         try{
             var TokenVlid=jwt.verify(req.cookies.accesstoken, "ajsdfSDKFJ%&&$4773")
