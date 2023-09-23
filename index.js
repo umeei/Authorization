@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 
 app.get('/Register', function(req,res){
-    res.render(__dirname+'/view/Registeration.ejs')
+    res.render(__dirname+'/views/Registeration.ejs')
 })
 
 
