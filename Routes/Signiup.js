@@ -1,6 +1,6 @@
 const router =require('express').Router();
 const usersignupmodel = require('../Model/UserSignup');
-const signupm= require('../Model/UserSignup')
+
 
 router.get('/',async function(req,res){
     var signup= await usersignupmodel.find()
