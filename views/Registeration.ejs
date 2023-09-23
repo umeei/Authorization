@@ -23,8 +23,8 @@
       <div class="container__form container--signin">
         <form onsubmit="login(event)" class="form" id="form2">
           <h2 class="form__title">Sign In</h2>
-          <input name="username" type="text" placeholder="Email" class="input" />
-          <input password="password" type="password" placeholder="Password" class="input" />
+          <input id="name" name="username" type="text" placeholder="Email" class="input" />
+          <input id="password" password="password" type="password" placeholder="Password" class="input" />
           <a href="#" class="link">Forgot your password?</a>
           <button class="btn">Sign In</button>
         </form>
@@ -69,8 +69,8 @@
         preventDefault(); //Reloading stop
 
         var data={
-            email:document.getElementById('email').value,
-            Password:document.getElementById('Password').value
+            email:document.getElementById('name').value,
+            Password:document.getElementById('password').value
         }
 
         var res = fetch("/api/Signin/login", {
