@@ -21,7 +21,7 @@
 
       <!-- Sign In -->
       <div class="container__form container--signin">
-        <form action="#" class="form" id="form2">
+        <form onsubmit="login(event)" class="form" id="form2">
           <h2 class="form__title">Sign In</h2>
           <input type="email" placeholder="Email" class="input" />
           <input type="password" placeholder="Password" class="input" />
@@ -60,6 +60,39 @@
 
       fistForm.addEventListener("submit", (e) => e.preventDefault());
       secondForm.addEventListener("submit", (e) => e.preventDefault());
+
+
+
+
+      async function login(event){
+
+        preventDefault(); //Reloading stop
+
+        var data={
+            email:document.getElementById('email').value,
+            Password:document.getElementById('Password').value;
+        }
+
+        var res = fetch("/api/Signin/login", {
+            method:"POST",
+            body: JSON.stringify(data),
+            headers:{
+                'Content-Type': 'application/json',
+            }
+        })
+
+        res=await res.JSON();
+
+        if(res.success){
+            alert(res.message);
+            window.redirect('/dashboard');
+
+        }
+        else{
+            alert(res.message);
+        }
+
+      }
     </script>
   </body>
 </html>

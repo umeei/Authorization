@@ -8,7 +8,7 @@ router.get('/records',async function(req,res){
 })
 
 router.get('/',async function(req,res){
-    await usersignupmodel.create(req.body);
+    await usersignupmodel.create(req.query);
     res.send("Signup data filled successfuly");
 })
 
