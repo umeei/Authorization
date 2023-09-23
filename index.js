@@ -13,6 +13,7 @@ app.get('/Register', function(req,res){
 })
 
 
+app.use('/api/Signup', Signup);
 
 app.use('/api/Signup', Signup);
 mongoose.connect("mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/Signup?retryWrites=true&w=majority").then(()=>{
