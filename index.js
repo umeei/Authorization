@@ -49,12 +49,12 @@ app.get('/Dashboard',(req,res)=>{
             console.log(TokenVlid);
         }
         catch(error){
-            res.redirect('/Registeration')
+            res.redirect('/login')
 
         }
     }
     else{
-        res.redirect('/Registerion')
+        res.redirect('/login')
 
     }
     res.render(__dirname + "/views/Dashboard.ejs")
