@@ -34,12 +34,12 @@ app.get('/login',(req,res)=>{
             console.log(error.message);
         }
     }
-    res.redirect(__dirname+'/Signin')
+    res.redirect(__dirname+'/views/Signin.ejs')
 })
 
 
 app.get('/Dashboard',(req,res)=>{
-    if(req.access.token){
+    if(req.cookies.accesstoken){
         try{
             var TokenVlid=jwt.verify(req.cookies.accesstoken, "ajsdfSDKFJ%&&$4773")
             console.log(TokenVlid);
