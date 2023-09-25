@@ -3,7 +3,7 @@ const app= express();
 const port =3000;
 const mongoose = require ('mongoose');
 const jwt=require('jsonwebtoken');
-const cookieparser=require('cookie-parser')
+const cookieParser=require('cookie-parser');
 app.use(express.json())
 
 
@@ -18,16 +18,18 @@ app.use('/api/Signin',Signin)
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
+app.use(cookieParser());
 
-app.get('/Register', function(req,res){
+
+app.get('/', function(req,res){
     res.render(__dirname+'/views/Registeration.ejs')
 })
 
 
 app.get('/login',(req,res)=>{
-    if(req.cookies.accesstoken){
+    if(req.cookies.accessToken){
         try{
-            var TokenVlid=jwt.verify(req.cookies.accesstoken, "ajsdfSDKFJ%&&$4773")
+            var TokenVlid=jwt.verify(req.cookies.accessToken, "ajsdfSDKFJ%&&$4773")
             res.redirect('/Dashboard')
         }
         catch (error){
@@ -39,9 +41,9 @@ app.get('/login',(req,res)=>{
 
 
 app.get('/Dashboard',(req,res)=>{
-    if(req.cookies.accesstoken){
+    if(req.cookies.accessToken){
         try{
-            var TokenVlid=jwt.verify(req.cookies.accesstoken, "ajsdfSDKFJ%&&$4773")
+            var TokenVlid=jwt.verify(req.cookies.accessToken, "ajsdfSDKFJ%&&$4773")
             console.log(TokenVlid);
         }
         catch(error){
@@ -53,6 +55,7 @@ app.get('/Dashboard',(req,res)=>{
         res.redirect('/login')
 
     }
+    res.redirect('/views/Dashboard')
 })
 
 
