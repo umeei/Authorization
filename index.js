@@ -38,7 +38,7 @@ app.get('/login',(req,res)=>{
             console.log(error.message);
         }
     }
-    res.render(__dirname+'/views/Signin.ejs')
+    res.render(__dirname+'/views/Registeration.ejs')
 })
 
 
@@ -49,12 +49,12 @@ app.get('/Dashboard',(req,res)=>{
             console.log(TokenVlid);
         }
         catch(error){
-            res.redirect('/Signin')
+            res.redirect('/Registeration')
 
         }
     }
     else{
-        res.redirect('/Signin')
+        res.redirect('/Registerion')
 
     }
     res.render(__dirname + "/views/Dashboard.ejs")
