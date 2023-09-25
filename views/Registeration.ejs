@@ -73,7 +73,7 @@
             Password:document.getElementById('password').value
         }
 
-        var res = fetch("/api/Signin/login", {
+        var res = await fetch("/api/Signin/login", {
             method:"POST",
             body: JSON.stringify(data),
             headers:{

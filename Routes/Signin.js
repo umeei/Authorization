@@ -7,7 +7,7 @@ router.post ( '/login', async (req,res)=>{
     var data = {username: "admin", password:"admin123"}
     var userdata =req.body;
 
-    if((data.username== userdata.username) && (data.password==userdata.password)){
+    if((data.username === userdata.username) && (data.password === userdata.password)){
 
         var token =jwt.sign({username:"admin"}, "ajsdfSDKFJ%&&$4773" , {expiresIn:"30s"})
 
