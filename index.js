@@ -34,7 +34,7 @@ app.get('/login',(req,res)=>{
     if(req.cookies.accessToken){
         try{
             var TokenVlid=jwt.verify(req.cookies.accessToken, "ajsdfSDKFJ%&&$4773")
-            res.redirect('/Dashboard')
+            res.redirect('/views/Dashboard')
         }
         catch (error){
             console.log(error.message);
@@ -51,12 +51,12 @@ app.get('/Dashboard',(req,res)=>{
             console.log(TokenVlid);
         }
         catch(error){
-            res.redirect('/login')
+            res.redirect('/Signin')
 
         }
     }
     else{
-        res.redirect('/login')
+        res.redirect('/Signin')
 
     }
     res.redirect('/views/Dashboard')
