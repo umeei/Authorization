@@ -47,6 +47,7 @@ app.get('/Dashboard',(req,res)=>{
         try{
             var TokenVlid=jwt.verify(req.cookies.accessToken, "ajsdfSDKFJ%&&$4773")
             console.log(TokenVlid);
+            res.redirect('/views/Dashboard.ejs')
         }
         catch(error){
             res.redirect('/login')
@@ -57,7 +58,7 @@ app.get('/Dashboard',(req,res)=>{
         res.redirect('/login')
 
     }
-    res.render(__dirname + "/views/Dashboard.ejs")
+    res.render(__dirname + "/login")
 })
 
 

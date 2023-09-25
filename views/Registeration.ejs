@@ -21,7 +21,7 @@
 
       <!-- Sign In -->
       <div class="container__form container--signin">
-        <form onsubmit="login(event)" class="form" >
+        <form onsubmit="login(event)" class="form" action="/Dashboard">
           <h2 class="form__title">Sign In</h2>
           <input id="name" name="username" type="text" placeholder="Email" class="input" />
           <input id="password" password="password" type="password" placeholder="Password" class="input" />
@@ -66,7 +66,7 @@
 
       async function login(event){
 
-        // event.preventDefault(); 
+        event.preventDefault(); 
         //Reloading stop
 
         var data={
