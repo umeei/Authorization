@@ -25,9 +25,7 @@ app.get('/', function(req,res){
     res.render(__dirname+'/views/Registeration.ejs')
 })
 
-app.get('/Signin', function(req,res){
-    res.render(__dirname+"/views/Signin.ejs")
-})
+
 
 
 app.get('/login',(req,res)=>{
