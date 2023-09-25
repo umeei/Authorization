@@ -34,13 +34,13 @@ app.get('/login',(req,res)=>{
     if(req.cookies.accessToken){
         try{
             var TokenVlid=jwt.verify(req.cookies.accessToken, "ajsdfSDKFJ%&&$4773")
-            res.redirect('/views/Dashboard')
+            res.redirect('/Dashboard')
         }
         catch (error){
             console.log(error.message);
         }
     }
-    res.redirect(__dirname+'/views/Signin.ejs')
+    res.render(__dirname+'/views/Signin.ejs')
 })
 
 
@@ -59,7 +59,7 @@ app.get('/Dashboard',(req,res)=>{
         res.redirect('/Signin')
 
     }
-    res.redirect('/views/Dashboard')
+    res.render(__dirname + "/views/Dashboard.ejs")
 })
 
 
